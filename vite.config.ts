@@ -5,4 +5,11 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   base: '/data-viz-midterm/',
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@data': '/public/data',
+      '@components': '/src/components',
+    }
+  },
 })
