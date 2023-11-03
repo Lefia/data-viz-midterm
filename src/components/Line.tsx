@@ -6,11 +6,11 @@ export default function Line() {
   const [data, setData] = useState<any[]>([])
 
   useEffect(() => {
-    d3.csv('/data/機場捷運單月平均運量.csv').then((data) => {
+    d3.csv(`${import.meta.env.BASE_URL}data/機場捷運單月平均運量.csv`).then((data) => {
       setData(data)
     })
   }, [])
-  
+
   return (
     <Plot
       data={[
