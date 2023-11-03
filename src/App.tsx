@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { useState } from 'react'
-import Menu from './components/Menu'
+import Menu from '@components/Menu'
+import Content from '@components/Content'
 
 export default function App() {
   const [tab, setTab] = useState('profile')
@@ -9,15 +10,13 @@ export default function App() {
       {/* Container */}
       <div
         className={clsx(
-          'mx-auto max-w-full lg:max-w-4xl',
-          'py-16 px-8 h-screen',
-          'flex flex-row',
+          'mx-auto max-w-full lg:max-w-5xl',
+          'px-8 h-screen',
+          'flex flex-row items-center',
         )}
       >
         <Menu className={clsx('w-16 h-full')} tabState={{tab, setTab}}/>
-        <div
-          className={clsx('h-full w-full ml-8 rounded-lg', 'bg-zinc-600')}
-        ></div>
+        <Content className={clsx('w-full h-full')} />
       </div>
     </div>
   )
