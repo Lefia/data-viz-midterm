@@ -6,6 +6,7 @@ export default function Line() {
   const [data, setData] = useState<d3.DSVRowArray<string>>()
 
   useEffect(() => {
+    // https://data.gov.tw/dataset/164956
     d3.csv(`${import.meta.env.BASE_URL}data/機場捷運單月平均運量.csv`).then(
       (data) => {
         setData(data)
@@ -28,7 +29,7 @@ export default function Line() {
         },
       ]}
       layout={{
-        title: '桃園機場捷運單月平均運量',
+        title: '桃園機場捷運每月平均運量',
         xaxis: {
           title: '日期',
           type: 'date',
