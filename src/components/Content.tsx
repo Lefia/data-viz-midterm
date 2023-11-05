@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 import Line from '@components/Line'
+import Bar from '@components/Bar'
+import Pie from '@components/Pie'
 
 type ContentProps = {
   className?: string
@@ -19,7 +21,9 @@ export default function Content(props: ContentProps) {
             'rounded-lg ml-8 p-8',
           )}
         >
-          {tabState.tab === 'line-and-scatter' && <Line />}
+          {tabState.tab === 'line' && <Line />}
+          {tabState.tab === 'bar' && <Bar />}
+          {tabState.tab === 'pie' && <Pie />}
         </div>
     </div>
   )

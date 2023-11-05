@@ -36,8 +36,8 @@ export default function Menu(props: MenuProps) {
       <MenuItem
         icon={<AiOutlineDotChart />}
         name='Line'
-        onClick={() => handleClick('line-and-scatter')}
-        active={handleActive('line-and-scatter')}
+        onClick={() => handleClick('line')}
+        active={handleActive('line')}
       />
       <MenuItem
         icon={<AiOutlineBarChart />}
