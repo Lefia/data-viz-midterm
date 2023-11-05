@@ -6,9 +6,11 @@ export default function Line() {
   const [data, setData] = useState<any[]>([])
 
   useEffect(() => {
-    d3.csv(`${import.meta.env.BASE_URL}data/機場捷運單月平均運量.csv`).then((data) => {
-      setData(data)
-    })
+    d3.csv(`${import.meta.env.BASE_URL}data/機場捷運單月平均運量.csv`).then(
+      (data) => {
+        setData(data)
+      },
+    )
   }, [])
 
   return (
@@ -23,10 +25,10 @@ export default function Line() {
           y: data.map((d) => d.loading),
           type: 'scatter',
           mode: 'lines+markers',
-          marker: { color: 'red' },
         },
       ]}
       layout={{
+        title: '桃園機場捷運單月平均運量',
         xaxis: {
           title: '日期',
           type: 'date',
