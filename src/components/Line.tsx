@@ -3,7 +3,7 @@ import Plot from 'react-plotly.js'
 import * as d3 from 'd3'
 
 export default function Line() {
-  const [data, setData] = useState<any[]>([])
+  const [data, setData] = useState<d3.DSVRowArray<string>>()
 
   useEffect(() => {
     d3.csv(`${import.meta.env.BASE_URL}data/機場捷運單月平均運量.csv`).then(
@@ -17,12 +17,12 @@ export default function Line() {
     <Plot
       data={[
         {
-          x: data.map((d) => {
+          x: data?.map((d) => {
             const year = parseInt(d.year) + 1911
-            const month = d.month
+            const month = parseInt(d.month)
             return new Date(year, month)
           }),
-          y: data.map((d) => d.loading),
+          y: data?.map((d) => d.loading),
           type: 'scatter',
           mode: 'lines+markers',
         },
