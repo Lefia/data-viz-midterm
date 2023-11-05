@@ -29,21 +29,25 @@ export default function Menu(props: MenuProps) {
     >
       <MenuItem
         icon={<FaUser />}
+        name='Profile'
         onClick={() => handleClick('profile')}
         active={handleActive('profile')}
       />
       <MenuItem
         icon={<AiOutlineDotChart />}
+        name='Line'
         onClick={() => handleClick('line-and-scatter')}
         active={handleActive('line-and-scatter')}
       />
       <MenuItem
         icon={<AiOutlineBarChart />}
+        name='Bar'
         onClick={() => handleClick('bar')}
         active={handleActive('bar')}
       />
       <MenuItem
         icon={<AiTwotonePieChart />}
+        name='Pie'
         onClick={() => handleClick('pie')}
         active={handleActive('pie')}
       />
