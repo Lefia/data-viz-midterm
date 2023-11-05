@@ -16,7 +16,7 @@ export default function App() {
         )}
       >
         <Menu className={clsx('w-16 h-full')} tabState={{tab, setTab}}/>
-        <Content className={clsx('w-full h-full')} />
+        <Content className={clsx('w-full h-full')} tabState={{tab, setTab}}/>
       </div>
     </div>
   )
