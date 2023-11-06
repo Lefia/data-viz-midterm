@@ -2,17 +2,21 @@ import { useEffect, useState } from 'react'
 import Plot from 'react-plotly.js'
 import * as d3 from 'd3'
 
-
 export default function Pie() {
   const [data, setData] = useState<d3.DSVRowArray<string>>()
-  const [country, setCountry] = useState<string[]>([])
+  const [powerTypes, setPowerTypes] = useState<string[]>([])
 
   useEffect(() => {
-    // https://data.gov.tw/dataset/163714
-    d3.csv(`${import.meta.env.BASE_URL}data/經濟部能源署_原油進口來源年資料.csv`).then((data) => {
+    //data.gov.tw/dataset/112650
+    https: d3.csv(
+      `${import.meta.env.BASE_URL}data/經濟部能源署_電力供給月資料.csv`,
+    ).then((data) => {
       setData(data)
-      console.log(data)
-      setCountry(data.columns.slice(3))
+      setPowerTypes([
+        data.columns[3],
+        ...data.columns.slice(5, 9),
+        ...data.columns.slice(10, 16),
+      ])
     })
   }, [])
 
@@ -21,65 +25,47 @@ export default function Pie() {
       data={[
         {
           type: 'pie',
-          name: '2019',
+          name: '2004',
           title: {
-            text: '2019',
+            text: '2004',
           },
           hole: 0.4,
-          domain: { row: 0, column: 0 },
-          labels: country,
-          values: country.map((country) => {
-            const yearData = data?.find((d) => d['日期(年)'] === '2019')
-            return parseInt(yearData![country])
-          })
+          domain: {
+            row: 0,
+            column: 0,
+          },
+          labels: powerTypes.map((powerType) =>
+            powerType.replace(/全國發電量_/g, ''),
+          ),
+          values: powerTypes.map((powerType) => {
+            const yearData = data?.find((d) => d['日期(年/月)'] === '200401')
+            return yearData![powerType]
+          }),
         },
         {
           type: 'pie',
-          name: '2020',
+          name: '2023',
           title: {
-            text: '2020',
+            text: '2023',
           },
           hole: 0.4,
-          domain: { row: 0, column: 1 },
-          labels: country,
-          values: country.map((country) => {
-            const yearData = data?.find((d) => d['日期(年)'] === '2020')
-            return parseInt(yearData![country])
-          })
-        },
-        {
-          type: 'pie',
-          name: '2021',
-          title: {
-            text: '2021',
+          domain: {
+            row: 0,
+            column: 1,
           },
-          hole: 0.4,
-          domain: { row: 1, column: 0 },
-          labels: country,
-          values: country.map((country) => {
-            const yearData = data?.find((d) => d['日期(年)'] === '2021')
-            return parseInt(yearData![country])
-          })
-        },
-        {
-          type: 'pie',
-          name: '2022',
-          title: {
-            text: '2022',
-          },
-          hole: 0.4,
-          domain: { row: 1, column: 1 },
-          labels: country,
-          values: country.map((country) => {
-            const yearData = data?.find((d) => d['日期(年)'] === '2022')
-            return parseInt(yearData![country])
-          })
+          labels: powerTypes.map((powerType) =>
+            powerType.replace(/全國發電量_/g, ''),
+          ),
+          values: powerTypes.map((powerType) => {
+            const yearData = data?.find((d) => d['日期(年/月)'] === '202309')
+            return yearData![powerType]
+          }),
         },
       ]}
       layout={{
-        title: '原油進口來源年資料',
+        title: '台灣發電類型比較: 2004年 & 2023年',
         grid: {
-          rows: 2,
+          rows: 1,
           columns: 2,
           pattern: 'independent',
         },
