@@ -17,7 +17,7 @@ export default function Profile() {
           src={`${import.meta.env.BASE_URL}image/avatar.jpg`}
           className={'w-48 h-48 rounded-full'}
         />
-        <span className={'text-white text-2xl font-semibold mt-4'}>曾翊承</span>
+        <span className={'text-white text-2xl font-medium mt-4'}>曾翊承</span>
         <span className={'text-zinc-300 text-md font-semibold mt-2'}>
           111502041
         </span>

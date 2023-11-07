@@ -11,12 +11,12 @@ export default function App() {
       <div
         className={clsx(
           'mx-auto max-w-full lg:max-w-5xl',
-          'px-8 h-screen',
+          'px-16 h-screen',
           'flex flex-row items-center',
         )}
       >
-        <Menu className={clsx('w-16 h-full')} tabState={{tab, setTab}}/>
-        <Content className={clsx('w-full h-full')} tabState={{tab, setTab}}/>
+        <Menu className={clsx('w-16')} tabState={{tab, setTab}}/>
+        <Content className={clsx('w-full')} tabState={{tab, setTab}}/>
       </div>
     </div>
   )

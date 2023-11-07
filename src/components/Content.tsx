@@ -15,7 +15,7 @@ type ContentProps = {
 export default function Content(props: ContentProps) {
   const { className, tabState } = props
   return (
-    <div className={clsx(className, 'flex flex-row items-center')}>
+    <div className={clsx(className)}>
         <div
           className={clsx(
             'w-full bg-zinc-600 h-[650px]',

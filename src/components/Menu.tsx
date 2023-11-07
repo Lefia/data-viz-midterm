@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import MenuItem from './MenuItem'
 import { FaUser } from 'react-icons/fa'
 import {
-  AiOutlineDotChart,
+  AiOutlineLineChart,
   AiTwotonePieChart,
   AiOutlineBarChart,
 } from 'react-icons/ai'
@@ -34,7 +34,7 @@ export default function Menu(props: MenuProps) {
         active={handleActive('profile')}
       />
       <MenuItem
-        icon={<AiOutlineDotChart />}
+        icon={<AiOutlineLineChart />}
         name='Line'
         onClick={() => handleClick('line')}
         active={handleActive('line')}
