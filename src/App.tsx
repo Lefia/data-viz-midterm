@@ -10,13 +10,13 @@ export default function App() {
       {/* Container */}
       <div
         className={clsx(
-          'mx-auto max-w-full lg:max-w-5xl',
-          'px-16 h-screen',
-          'flex flex-row items-center',
+          'mx-auto max-w-full lg:max-w-6xl',
+          'px-16',
+          'flex flex-row',
         )}
       >
-        <Menu className={clsx('w-16')} tabState={{tab, setTab}}/>
-        <Content className={clsx('w-full')} tabState={{tab, setTab}}/>
+        <Menu tabState={{tab, setTab}}/>
+        <Content tabState={{tab, setTab}}/>
       </div>
     </div>
   )

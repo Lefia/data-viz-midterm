@@ -8,7 +8,6 @@ import {
 } from 'react-icons/ai'
 
 type MenuProps = {
-  className?: string
   tabState: {
     tab: string
     setTab: (tab: string) => void
@@ -16,16 +15,23 @@ type MenuProps = {
 }
 
 export default function Menu(props: MenuProps) {
-  const { className, tabState } = props
+  const { tabState } = props
   const handleClick = (tab: string) => {
     tabState.setTab(tab)
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   }
   const handleActive = (tab: string) => {
     return tabState.tab === tab
   }
   return (
     <div
-      className={clsx(className, 'flex flex-col justify-center items-center')}
+      className={clsx(
+        'h-screen flex flex-col justify-center items-center',
+        'sticky top-0 left-0 translate-x-16',
+      )}
     >
       <MenuItem
         icon={<FaUser />}

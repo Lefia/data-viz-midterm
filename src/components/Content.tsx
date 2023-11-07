@@ -5,7 +5,6 @@ import Pie from '@components/Pie'
 import Profile from '@components/Profile'
 
 type ContentProps = {
-  className?: string
   tabState: {
     tab: string
     setTab: (tab: string) => void
@@ -13,13 +12,13 @@ type ContentProps = {
 }
 
 export default function Content(props: ContentProps) {
-  const { className, tabState } = props
+  const { tabState } = props
   return (
-    <div className={clsx(className)}>
+    <div className={'w-full p-16 flex flex-col justify-center'}>
         <div
           className={clsx(
-            'w-full bg-zinc-600 h-[650px]',
-            'rounded-lg ml-8 p-8',
+            'w-full bg-zinc-600 min-h-[550px]',
+            'rounded-lg ml-12 p-8 my-8',
           )}
         >
           {tabState.tab === 'profile' && <Profile />}
