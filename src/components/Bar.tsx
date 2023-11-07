@@ -91,17 +91,17 @@ export default function Bar() {
             },
           ],
           autosize: true,
-          paper_bgcolor: 'rgba(0,0,0,0)',
-          modebar: {
-            bgcolor: 'rgba(0,0,0,0)',
-            color: 'rgba(128,139,150,1)',
-            activecolor: 'rgba(171,178,185,1)',
-            orientation: 'h',
-          },
+          // paper_bgcolor: 'rgba(0,0,0,0)',
+          // modebar: {
+          //   bgcolor: 'rgba(0,0,0,0)',
+          //   color: 'rgba(128,139,150,1)',
+          //   activecolor: 'rgba(171,178,185,1)',
+          //   orientation: 'h',
+          // },
         }}
         useResizeHandler={true}
         config={{ responsive: true }}
-        className={'w-full h-full rounded-lg bg-white'}
+        className={'w-full h-full'}
       />
       <div className={'w-full bg-slate-300 rounded-lg mt-4 p-4'}>
         從圖一中可以觀察到，現在中年以上的人口相較於10年前有明顯的增加，人口組成有老化的趨勢。而在11歲到21歲這個區間的年輕人相較十年前則是有明顯的減少。<br />

@@ -7,8 +7,8 @@ export default function Pie() {
   const [powerTypes, setPowerTypes] = useState<string[]>([])
 
   useEffect(() => {
-    //data.gov.tw/dataset/112650
-    https: d3.csv(
+    //https:data.gov.tw/dataset/112650
+    d3.csv(
       `${import.meta.env.BASE_URL}data/經濟部能源署_電力供給月資料.csv`,
     ).then((data) => {
       setData(data)
@@ -71,17 +71,17 @@ export default function Pie() {
             pattern: 'independent',
           },
           autosize: true,
-          paper_bgcolor: 'rgba(0,0,0,0)',
-          modebar: {
-            bgcolor: 'rgba(0,0,0,0)',
-            color: 'rgba(128,139,150,1)',
-            activecolor: 'rgba(171,178,185,1)',
-            orientation: 'h',
-          },
+          // paper_bgcolor: 'rgba(0,0,0,0)',
+          // modebar: {
+          //   bgcolor: 'rgba(0,0,0,0)',
+          //   color: 'rgba(128,139,150,1)',
+          //   activecolor: 'rgba(171,178,185,1)',
+          //   orientation: 'h',
+          // },
         }}
         useResizeHandler={true}
         config={{ responsive: true }}
-        className={'w-full h-full rounded-lg bg-white'}
+        className={'w-full h-full'}
       />
       <div className={'w-full bg-slate-300 rounded-lg mt-4 p-4'}>
         透過比較兩張圖，我們可以發現在19年後發電的類型仍然是以火力發電，包括過去就大量使用的燃氣發電和增加許多的燃氣火力發電，推測可能是用來補足因核四廠爭議而減少的核能發電。不過我們也能看到太陽能發電相較於過去有明顯的提升，這可能是近年政策推廣太陽能發電的結果。
