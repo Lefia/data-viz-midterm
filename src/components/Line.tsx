@@ -15,7 +15,7 @@ export default function Line() {
   }, [])
 
   return (
-    <div>
+    <div className={'inline-flex flex-col'}>
       <Plot
         data={[
           {
@@ -39,17 +39,17 @@ export default function Line() {
             title: '單月平均運量',
           },
           autosize: true,
-          // paper_bgcolor: 'rgba(0,0,0,0)',
-          // modebar: {
-          //   bgcolor: 'rgba(0,0,0,0)',
-          //   color: 'rgba(128,139,150,1)',
-          //   activecolor: 'rgba(171,178,185,1)',
-          //   orientation: 'h',
-          // },
+          paper_bgcolor: 'rgba(0,0,0,0)',
+          modebar: {
+            bgcolor: 'rgba(0,0,0,0)',
+            color: 'rgba(128,139,150,1)',
+            activecolor: 'rgba(171,178,185,1)',
+            orientation: 'h',
+          },
         }}
         useResizeHandler={true}
         config={{ responsive: true }}
-        className={'w-full h-full'}
+        className={'w-full h-[450px] bg-white rounded-lg'}
       />
       <div className={'w-full bg-slate-300 rounded-lg mt-4 p-4'}>
         從圖中可以觀察到，每月的平均運量從2019後穩定上升，但在2020後便急遽下降，猜測可能是受到COVID-19的影響，出國人數減少，因此搭乘機場捷運的人數也隨之減少。
