@@ -11,8 +11,8 @@ export default function App() {
       <div
         className={clsx(
           'mx-auto max-w-full lg:max-w-6xl',
-          'px-16',
-          'flex flex-row',
+          'md:px-16 px-4 min-h-screen',
+          'flex md:flex-row flex-col',
         )}
       >
         <Menu tabState={{tab, setTab}}/>

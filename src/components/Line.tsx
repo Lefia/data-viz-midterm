@@ -50,7 +50,7 @@ export default function Line() {
         }}
         useResizeHandler={true}
         config={{ responsive: true }}
-        className={'w-full h-[400px] bg-white rounded-lg'}
+        className={'w-full md:h-[400px] h-96 bg-white rounded-lg'}
       />
       <Card
         title='Source'

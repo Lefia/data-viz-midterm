@@ -15,11 +15,11 @@ export default function MenuItem(props: MenuItemProps) {
     }
   }
   return (
-    <div className={'relative my-4'}>
+    <div className={'relative md:my-4 mt-8 mx-4'}>
       <div
         className={clsx(
-          'w-16 h-16 rounded-full relative',
-          'text-4xl transition-all peer',
+          'lg:w-16 lg:h-16 md:h-14 md:w-14 w-10 h-10 rounded-full relative',
+          'md:text-4xl text-xl transition-all peer',
           'flex items-center justify-center',
           {
             'bg-teal-600 text-zinc-100 scale-[1.3] my-6 hover:scale-[1.35] hover:bg-teal-500':
@@ -37,7 +37,7 @@ export default function MenuItem(props: MenuItemProps) {
         className={clsx(
           'absolute inset-0 -translate-x-full',
           'flex justify-center items-center',
-          'invisible peer-hover:visible',
+          'invisible md:peer-hover:visible',
           {
             'pr-12': active,
             'pr-8': !active,

@@ -14,11 +14,11 @@ type ContentProps = {
 export default function Content(props: ContentProps) {
   const { tabState } = props
   return (
-    <div className={'w-full p-16 flex flex-col justify-center'}>
+    <div className={'w-full md:p-16 p-4 flex flex-col justify-center'}>
         <div
           className={clsx(
-            'w-full bg-zinc-600 min-h-[550px]',
-            'rounded-lg ml-12 p-8 my-8',
+            'w-full bg-zinc-600 md:min-h-[550px] min-h-[300px]',
+            'rounded-lg md:ml-12 p-8 my-8',
           )}
         >
           {tabState.tab === 'profile' && <Profile />}

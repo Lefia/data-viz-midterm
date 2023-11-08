@@ -29,8 +29,8 @@ export default function Menu(props: MenuProps) {
   return (
     <div
       className={clsx(
-        'h-screen flex flex-col justify-center items-center',
-        'sticky top-0 left-0 translate-x-16',
+        'md:h-screen h-16 flex md:flex-col flex-row justify-center items-center',
+        'md:sticky md:top-0 md:left-0 md:translate-x-16',
       )}
     >
       <MenuItem
